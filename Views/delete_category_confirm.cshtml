@@ -1,0 +1,15 @@
+Are you sure you want to delete the category @Model["category"].GetName() and the tasks:
+
+<ul>
+      @foreach (var task in @Model["categoryTasks"]) {
+        <li>@task.GetDescription()</li>
+      }
+</ul>
+
+<form class="container" action="/categories/@Model["category"].GetId()/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <button class ="btn btn-danger"  type="submit">Confirm</button>
+</form>
+
+
+<a href="/categories/@Model["category"].GetId()">Back</a>
